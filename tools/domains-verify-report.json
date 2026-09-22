@@ -1,0 +1,1500 @@
+{
+  "generatedAt": "2026-09-22T11:11:14.361Z",
+  "total": 156,
+  "ok": 156,
+  "fail": 0,
+  "results": [
+    {
+      "domain": "a2a.it",
+      "names": [
+        "a2a"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.a2a.it/"
+    },
+    {
+      "domain": "acea.it",
+      "names": [
+        "acea"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.acea.it/"
+    },
+    {
+      "domain": "aci.it",
+      "names": [
+        "aci",
+        "automobile club italia"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.aci.it/"
+    },
+    {
+      "domain": "adobe.com",
+      "names": [
+        "adobe"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.adobe.com/"
+    },
+    {
+      "domain": "agenziaentrate.gov.it",
+      "names": [
+        "agenzia delle entrate",
+        "agenzia entrate"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.agenziaentrate.gov.it/"
+    },
+    {
+      "domain": "agenziaentrateriscossione.gov.it",
+      "names": [
+        "agenzia delle entrate riscossione",
+        "riscossione",
+        "equitalia"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.agenziaentrateriscossione.gov.it/"
+    },
+    {
+      "domain": "airbnb.it",
+      "names": [
+        "airbnb"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.airbnb.it/"
+    },
+    {
+      "domain": "aliexpress.com",
+      "names": [
+        "aliexpress"
+      ],
+      "ok": true,
+      "status": 200,
+      "redirectUrl": ""
+    },
+    {
+      "domain": "allianz.it",
+      "names": [
+        "allianz"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.allianz.it:443/"
+    },
+    {
+      "domain": "amazon.it",
+      "names": [
+        "amazon"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.amazon.it/"
+    },
+    {
+      "domain": "americanexpress.com",
+      "names": [
+        "american express",
+        "amex"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.americanexpress.com/"
+    },
+    {
+      "domain": "apple.com",
+      "names": [
+        "apple",
+        "icloud"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.apple.com/"
+    },
+    {
+      "domain": "aruba.it",
+      "names": [
+        "aruba"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "http://www.aruba.it/"
+    },
+    {
+      "domain": "atm.it",
+      "names": [
+        "atm",
+        "atm milano"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.atm.it/"
+    },
+    {
+      "domain": "audible.it",
+      "names": [
+        "audible"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.audible.it:443/"
+    },
+    {
+      "domain": "autostrade.it",
+      "names": [
+        "autostrade",
+        "autostrade per l'italia"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.autostrade.it:443/"
+    },
+    {
+      "domain": "axa.it",
+      "names": [
+        "axa"
+      ],
+      "ok": true,
+      "status": 302,
+      "redirectUrl": "https://www.axa.it/"
+    },
+    {
+      "domain": "bancamediolanum.it",
+      "names": [
+        "banca mediolanum",
+        "mediolanum"
+      ],
+      "ok": true,
+      "status": 302,
+      "redirectUrl": "https://www.bancamediolanum.it/"
+    },
+    {
+      "domain": "bancasistema.it",
+      "names": [
+        "banca sistema"
+      ],
+      "ok": true,
+      "status": 200,
+      "redirectUrl": ""
+    },
+    {
+      "domain": "bancobpm.it",
+      "names": [
+        "banco bpm",
+        "bancobpm",
+        "bpm"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.bancobpm.it/"
+    },
+    {
+      "domain": "binance.com",
+      "names": [
+        "binance"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.binance.com/"
+    },
+    {
+      "domain": "bnl.it",
+      "names": [
+        "bnl",
+        "banca nazionale del lavoro"
+      ],
+      "ok": true,
+      "status": 302,
+      "redirectUrl": "https://bnl.it/it/per-te/"
+    },
+    {
+      "domain": "booking.com",
+      "names": [
+        "booking",
+        "booking.com"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.booking.com/"
+    },
+    {
+      "domain": "bper.it",
+      "names": [
+        "bper",
+        "bper banca"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.bper.it/"
+    },
+    {
+      "domain": "bunq.com",
+      "names": [
+        "bunq"
+      ],
+      "ok": true,
+      "status": 308,
+      "redirectUrl": "https://www.bunq.com/"
+    },
+    {
+      "domain": "canva.com",
+      "names": [
+        "canva"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.canva.com/"
+    },
+    {
+      "domain": "cattolica.it",
+      "names": [
+        "cattolica assicurazioni",
+        "cattolica"
+      ],
+      "ok": true,
+      "status": 302,
+      "redirectUrl": "https://www.cattolica.it/"
+    },
+    {
+      "domain": "chebanca.it",
+      "names": [
+        "che banca",
+        "chebanca"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://mediobancapremier.com/"
+    },
+    {
+      "domain": "coinbase.com",
+      "names": [
+        "coinbase"
+      ],
+      "ok": true,
+      "status": 302,
+      "redirectUrl": "https://www.coinbase.com/"
+    },
+    {
+      "domain": "coopvoce.it",
+      "names": [
+        "coopvoce"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.coopvoce.it/"
+    },
+    {
+      "domain": "credem.it",
+      "names": [
+        "credem"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.credem.it/"
+    },
+    {
+      "domain": "credit-agricole.it",
+      "names": [
+        "credit agricole",
+        "credit agricole italia",
+        "cariparma"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.credit-agricole.it:443/"
+    },
+    {
+      "domain": "dazn.com",
+      "names": [
+        "dazn"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.dazn.com/"
+    },
+    {
+      "domain": "decathlon.it",
+      "names": [
+        "decathlon"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.decathlon.it/"
+    },
+    {
+      "domain": "deliveroo.it",
+      "names": [
+        "deliveroo"
+      ],
+      "ok": true,
+      "status": 302,
+      "redirectUrl": "https://deliveroo.it/it/"
+    },
+    {
+      "domain": "deutsche-bank.it",
+      "names": [
+        "deutsche bank"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://deutsche-bank.it/index"
+    },
+    {
+      "domain": "discord.com",
+      "names": [
+        "discord"
+      ],
+      "ok": true,
+      "status": 200,
+      "redirectUrl": ""
+    },
+    {
+      "domain": "disneyplus.com",
+      "names": [
+        "disney+",
+        "disney plus",
+        "disneyplus"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.disneyplus.com/"
+    },
+    {
+      "domain": "dropbox.com",
+      "names": [
+        "dropbox"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.dropbox.com/"
+    },
+    {
+      "domain": "easyjet.com",
+      "names": [
+        "easyjet"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.easyjet.com/"
+    },
+    {
+      "domain": "ebay.it",
+      "names": [
+        "ebay"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.ebay.it/"
+    },
+    {
+      "domain": "edison.it",
+      "names": [
+        "edison"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.edison.it/"
+    },
+    {
+      "domain": "enel.it",
+      "names": [
+        "enel",
+        "enel energia"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.enel.it/"
+    },
+    {
+      "domain": "eni.com",
+      "names": [
+        "eni",
+        "eni gas e luce",
+        "plenitude"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.eni.com/"
+    },
+    {
+      "domain": "epicgames.com",
+      "names": [
+        "epic games",
+        "epic"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.epicgames.com:443/"
+    },
+    {
+      "domain": "etsy.com",
+      "names": [
+        "etsy"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.etsy.com/"
+    },
+    {
+      "domain": "euronics.it",
+      "names": [
+        "euronics"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.euronics.it/"
+    },
+    {
+      "domain": "facebook.com",
+      "names": [
+        "facebook",
+        "fb"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.facebook.com/"
+    },
+    {
+      "domain": "fastweb.it",
+      "names": [
+        "fastweb"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.fastweb.it/"
+    },
+    {
+      "domain": "findomestic.it",
+      "names": [
+        "findomestic"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.findomestic.it/"
+    },
+    {
+      "domain": "finecobank.com",
+      "names": [
+        "fineco",
+        "finecobank"
+      ],
+      "ok": true,
+      "status": 302,
+      "redirectUrl": "https://it.finecobank.com/"
+    },
+    {
+      "domain": "free-now.com",
+      "names": [
+        "freenow",
+        "free now",
+        "mytaxi"
+      ],
+      "ok": true,
+      "status": 429,
+      "redirectUrl": ""
+    },
+    {
+      "domain": "generali.it",
+      "names": [
+        "generali"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.generali.it/"
+    },
+    {
+      "domain": "github.com",
+      "names": [
+        "github"
+      ],
+      "ok": true,
+      "status": 200,
+      "redirectUrl": ""
+    },
+    {
+      "domain": "gitlab.com",
+      "names": [
+        "gitlab"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://about.gitlab.com/"
+    },
+    {
+      "domain": "glovoapp.com",
+      "names": [
+        "glovo"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://glovoapp.com/en/"
+    },
+    {
+      "domain": "google.com",
+      "names": [
+        "google",
+        "gmail"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.google.com/"
+    },
+    {
+      "domain": "gruppohera.it",
+      "names": [
+        "hera"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.gruppohera.it:443/"
+    },
+    {
+      "domain": "gruppoiren.it",
+      "names": [
+        "iren"
+      ],
+      "ok": true,
+      "status": 200,
+      "redirectUrl": ""
+    },
+    {
+      "domain": "gtt.to.it",
+      "names": [
+        "gtt",
+        "gtt torino"
+      ],
+      "ok": true,
+      "status": 200,
+      "redirectUrl": ""
+    },
+    {
+      "domain": "hype.it",
+      "names": [
+        "hype"
+      ],
+      "ok": true,
+      "status": 302,
+      "redirectUrl": "https://www.hype.it/"
+    },
+    {
+      "domain": "id.lepida.it",
+      "names": [
+        "lepida id",
+        "spid lepida"
+      ],
+      "ok": true,
+      "status": 200,
+      "redirectUrl": ""
+    },
+    {
+      "domain": "id.tim.it",
+      "names": [
+        "tim id",
+        "spid tim"
+      ],
+      "ok": true,
+      "status": 200,
+      "redirectUrl": ""
+    },
+    {
+      "domain": "identity.infocert.it",
+      "names": [
+        "infocert id",
+        "spid infocert",
+        "infocert"
+      ],
+      "ok": true,
+      "status": 200,
+      "redirectUrl": ""
+    },
+    {
+      "domain": "ikea.com",
+      "names": [
+        "ikea"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.ikea.com/"
+    },
+    {
+      "domain": "iliad.it",
+      "names": [
+        "iliad"
+      ],
+      "ok": true,
+      "status": 302,
+      "redirectUrl": "https://www.iliad.it/"
+    },
+    {
+      "domain": "illimitybank.com",
+      "names": [
+        "illimity",
+        "illimity bank"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.illimitybank.com/"
+    },
+    {
+      "domain": "inail.it",
+      "names": [
+        "inail"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.inail.it/cs/internet/home.html"
+    },
+    {
+      "domain": "ing.it",
+      "names": [
+        "ing",
+        "ing direct",
+        "ing bank"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.ing.it/"
+    },
+    {
+      "domain": "inps.it",
+      "names": [
+        "inps"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.inps.it/"
+    },
+    {
+      "domain": "instagram.com",
+      "names": [
+        "instagram",
+        "ig"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.instagram.com/"
+    },
+    {
+      "domain": "intesasanpaolo.com",
+      "names": [
+        "intesa sanpaolo",
+        "intesa",
+        "isp",
+        "intesasanpaolo"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.intesasanpaolo.com/"
+    },
+    {
+      "domain": "io.italia.it",
+      "names": [
+        "io",
+        "app io",
+        "io app"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://ioapp.it/"
+    },
+    {
+      "domain": "istruzione.it",
+      "names": [
+        "ministero istruzione",
+        "miur",
+        "istruzione"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.istruzione.it/"
+    },
+    {
+      "domain": "ita-airways.com",
+      "names": [
+        "ita airways",
+        "alitalia"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.ita-airways.com/"
+    },
+    {
+      "domain": "italotreno.it",
+      "names": [
+        "italo",
+        "italotreno"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.italotreno.com/"
+    },
+    {
+      "domain": "justeat.it",
+      "names": [
+        "just eat",
+        "justeat"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.justeat.it/"
+    },
+    {
+      "domain": "kenamobile.it",
+      "names": [
+        "kena mobile",
+        "kena"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.kenamobile.it/"
+    },
+    {
+      "domain": "klarna.com",
+      "names": [
+        "klarna"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.klarna.com/"
+    },
+    {
+      "domain": "libero.it",
+      "names": [
+        "libero"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.libero.it/"
+    },
+    {
+      "domain": "linkedin.com",
+      "names": [
+        "linkedin"
+      ],
+      "ok": true,
+      "status": 200,
+      "redirectUrl": ""
+    },
+    {
+      "domain": "manomano.it",
+      "names": [
+        "manomano"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.manomano.it:443/"
+    },
+    {
+      "domain": "mediaworld.it",
+      "names": [
+        "mediaworld",
+        "media world"
+      ],
+      "ok": true,
+      "status": 403,
+      "redirectUrl": ""
+    },
+    {
+      "domain": "microsoft.com",
+      "names": [
+        "microsoft",
+        "outlook",
+        "hotmail",
+        "live",
+        "office 365",
+        "onedrive"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.microsoft.com/"
+    },
+    {
+      "domain": "mps.it",
+      "names": [
+        "mps",
+        "monte dei paschi di siena",
+        "monte dei paschi"
+      ],
+      "ok": true,
+      "status": 302,
+      "redirectUrl": "https://www.mps.it/"
+    },
+    {
+      "domain": "n26.com",
+      "names": [
+        "n26"
+      ],
+      "ok": true,
+      "status": 302,
+      "redirectUrl": "https://n26.com/en-it"
+    },
+    {
+      "domain": "namirial.com",
+      "names": [
+        "namirial id",
+        "spid namirial"
+      ],
+      "ok": true,
+      "status": 302,
+      "redirectUrl": "https://namirial.com/en/"
+    },
+    {
+      "domain": "netflix.com",
+      "names": [
+        "netflix"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.netflix.com/"
+    },
+    {
+      "domain": "nexi.it",
+      "names": [
+        "nexi"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.nexi.it/"
+    },
+    {
+      "domain": "nintendo.it",
+      "names": [
+        "nintendo"
+      ],
+      "ok": true,
+      "status": 302,
+      "redirectUrl": "https://www.nintendo.it:443/"
+    },
+    {
+      "domain": "noipa.mef.gov.it",
+      "names": [
+        "noipa"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://noipa.mef.gov.it/cl/web/guest/home"
+    },
+    {
+      "domain": "nowtv.it",
+      "names": [
+        "now",
+        "nowtv",
+        "now tv"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.nowtv.it/"
+    },
+    {
+      "domain": "pagopa.gov.it",
+      "names": [
+        "pagopa"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.pagopa.gov.it:443/"
+    },
+    {
+      "domain": "paramountplus.com",
+      "names": [
+        "paramount+",
+        "paramount plus"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.paramountplus.com/"
+    },
+    {
+      "domain": "paypal.com",
+      "names": [
+        "paypal"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.paypal.com/"
+    },
+    {
+      "domain": "pcloud.com",
+      "names": [
+        "pcloud"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.pcloud.com/"
+    },
+    {
+      "domain": "pinterest.com",
+      "names": [
+        "pinterest"
+      ],
+      "ok": true,
+      "status": 308,
+      "redirectUrl": "https://www.pinterest.com/"
+    },
+    {
+      "domain": "playstation.com",
+      "names": [
+        "playstation",
+        "psn",
+        "playstation network"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.playstation.com:443/"
+    },
+    {
+      "domain": "popso.it",
+      "names": [
+        "banca popolare di sondrio",
+        "popso"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.popso.it/home"
+    },
+    {
+      "domain": "poste.it",
+      "names": [
+        "poste italiane",
+        "poste",
+        "bancoposta",
+        "banco posta"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.poste.it/"
+    },
+    {
+      "domain": "posteid.poste.it",
+      "names": [
+        "posteid",
+        "poste id",
+        "spid poste"
+      ],
+      "ok": true,
+      "status": 200,
+      "redirectUrl": ""
+    },
+    {
+      "domain": "postepay.it",
+      "names": [
+        "postepay"
+      ],
+      "ok": true,
+      "status": 302,
+      "redirectUrl": "https://postepay.poste.it/"
+    },
+    {
+      "domain": "primevideo.com",
+      "names": [
+        "prime video",
+        "amazon prime video"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.primevideo.com/"
+    },
+    {
+      "domain": "proton.me",
+      "names": [
+        "protonmail",
+        "proton mail",
+        "proton"
+      ],
+      "ok": true,
+      "status": 200,
+      "redirectUrl": ""
+    },
+    {
+      "domain": "realemutua.it",
+      "names": [
+        "reale mutua"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.realemutua.it/"
+    },
+    {
+      "domain": "reddit.com",
+      "names": [
+        "reddit"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.reddit.com/"
+    },
+    {
+      "domain": "revolut.com",
+      "names": [
+        "revolut"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.revolut.com/"
+    },
+    {
+      "domain": "ryanair.com",
+      "names": [
+        "ryanair"
+      ],
+      "ok": true,
+      "status": 302,
+      "redirectUrl": "https://www.ryanair.com/"
+    },
+    {
+      "domain": "satispay.com",
+      "names": [
+        "satispay"
+      ],
+      "ok": true,
+      "status": 302,
+      "redirectUrl": "https://satispay.com/it"
+    },
+    {
+      "domain": "sella.it",
+      "names": [
+        "banca sella",
+        "sella"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.sella.it/"
+    },
+    {
+      "domain": "shein.com",
+      "names": [
+        "shein"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.shein.com/"
+    },
+    {
+      "domain": "sky.it",
+      "names": [
+        "sky"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.sky.it/"
+    },
+    {
+      "domain": "slack.com",
+      "names": [
+        "slack"
+      ],
+      "ok": true,
+      "status": 200,
+      "redirectUrl": ""
+    },
+    {
+      "domain": "snapchat.com",
+      "names": [
+        "snapchat"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.snapchat.com:443/"
+    },
+    {
+      "domain": "sorgenia.it",
+      "names": [
+        "sorgenia"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.sorgenia.it/"
+    },
+    {
+      "domain": "spid.gov.it",
+      "names": [
+        "spid"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.spid.gov.it/"
+    },
+    {
+      "domain": "spotify.com",
+      "names": [
+        "spotify"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.spotify.com/"
+    },
+    {
+      "domain": "spusu.it",
+      "names": [
+        "spusu"
+      ],
+      "ok": true,
+      "status": 308,
+      "redirectUrl": "https://www.spusu.it/"
+    },
+    {
+      "domain": "store.steampowered.com",
+      "names": [
+        "steam"
+      ],
+      "ok": true,
+      "status": 200,
+      "redirectUrl": ""
+    },
+    {
+      "domain": "subito.it",
+      "names": [
+        "subito"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.subito.it/"
+    },
+    {
+      "domain": "telegram.org",
+      "names": [
+        "telegram"
+      ],
+      "ok": true,
+      "status": 200,
+      "redirectUrl": ""
+    },
+    {
+      "domain": "telepass.com",
+      "names": [
+        "telepass"
+      ],
+      "ok": true,
+      "status": 302,
+      "redirectUrl": "https://www.telepass.com/"
+    },
+    {
+      "domain": "threads.net",
+      "names": [
+        "threads"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.threads.com/"
+    },
+    {
+      "domain": "tiktok.com",
+      "names": [
+        "tiktok"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.tiktok.com/"
+    },
+    {
+      "domain": "tim.it",
+      "names": [
+        "tim",
+        "telecom italia"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.tim.it/"
+    },
+    {
+      "domain": "trenitalia.com",
+      "names": [
+        "trenitalia",
+        "ferrovie dello stato",
+        "fs"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.trenitalia.com/"
+    },
+    {
+      "domain": "trenord.it",
+      "names": [
+        "trenord"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.trenord.it/"
+    },
+    {
+      "domain": "tripadvisor.it",
+      "names": [
+        "tripadvisor"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.tripadvisor.it/"
+    },
+    {
+      "domain": "tuta.com",
+      "names": [
+        "tutanota",
+        "tuta"
+      ],
+      "ok": true,
+      "status": 200,
+      "redirectUrl": ""
+    },
+    {
+      "domain": "tv.apple.com",
+      "names": [
+        "apple tv+",
+        "apple tv"
+      ],
+      "ok": true,
+      "status": 200,
+      "redirectUrl": ""
+    },
+    {
+      "domain": "twitch.tv",
+      "names": [
+        "twitch"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.twitch.tv/"
+    },
+    {
+      "domain": "uber.com",
+      "names": [
+        "uber"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.uber.com/"
+    },
+    {
+      "domain": "unicredit.it",
+      "names": [
+        "unicredit"
+      ],
+      "ok": true,
+      "status": 403,
+      "redirectUrl": ""
+    },
+    {
+      "domain": "unieuro.it",
+      "names": [
+        "unieuro"
+      ],
+      "ok": true,
+      "status": 302,
+      "redirectUrl": "https://www.unieuro.it/"
+    },
+    {
+      "domain": "unipolsai.it",
+      "names": [
+        "unipolsai",
+        "unipol"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.unipol.it/"
+    },
+    {
+      "domain": "verymobile.it",
+      "names": [
+        "very mobile",
+        "very"
+      ],
+      "ok": true,
+      "status": 302,
+      "redirectUrl": "https://validate.perfdrive.com/?ssa=be099ccc-c457-47e9-9694-96cc2bcac68e&ssb=80284390124&ssc=https%3A%2F%2Fverymobile.it%2F&ssi=9f6fd243-cczf-4350-908a-6841ad456037&ssk=botmanager_support@radware.com&ssm=48573744309772675101366172909619&ssn=0f66fd36ccbd00c2c67b35487085cb351e0c7d41e2be-4691-40ca-882b1e&sso=bec0d719-8a22c23d87ef693c065f5effffb823ec56fa15a1e76f0085&ssp=01356758191790053156179000910095786&ssq=56568977543177478522275431512834147256132&ssr=ODcuMTYuMzUuMTg1&sst=curl/8.19.0&ssu=&ssv=&ssw=&ssx=eyJ1em14IjoiN2ZjMDAwZTdiMWFjNWYtNjY5YS00OThmLWFkYzktODA2YTUzNjBhOTVlMS0xNzkwMDc1NDMxMzc0MC0wMDY3NGI4YjNlZTY4MWUzMjg5MTAiLCJfX3V6bWYiOiI3ZjkwMDA3ZDQxZTJiZS00NjkxLTQwY2EtODcxOS04YTIyYzIzZDg3ZWYxLTE3OTAwNzU0MzEzNzQwLTAwNWM3ZjMwNDNiY2ZhMjk0NjUxMCIsInJkIjoidmVyeW1vYmlsZS5pdCJ9"
+    },
+    {
+      "domain": "vinted.it",
+      "names": [
+        "vinted"
+      ],
+      "ok": true,
+      "status": 302,
+      "redirectUrl": "https://www.vinted.it/"
+    },
+    {
+      "domain": "virgilio.it",
+      "names": [
+        "virgilio"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.virgilio.it/"
+    },
+    {
+      "domain": "vittoriaassicurazioni.com",
+      "names": [
+        "vittoria assicurazioni"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.vittoriaassicurazioni.com/"
+    },
+    {
+      "domain": "vodafone.it",
+      "names": [
+        "vodafone"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://privati.vodafone.it/"
+    },
+    {
+      "domain": "whatsapp.com",
+      "names": [
+        "whatsapp"
+      ],
+      "ok": true,
+      "status": 302,
+      "redirectUrl": "https://www.whatsapp.com/"
+    },
+    {
+      "domain": "widiba.it",
+      "names": [
+        "widiba"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.widiba.it/"
+    },
+    {
+      "domain": "windtre.it",
+      "names": [
+        "windtre",
+        "wind tre",
+        "wind",
+        "tre"
+      ],
+      "ok": true,
+      "status": 302,
+      "redirectUrl": "https://validate.perfdrive.com/2548ffee540d5ae734a782a75f0f5f0d/?ssa=82f17664-7550-4070-aca9-80a8f0517e0a&ssb=38097393483&ssc=https%3A%2F%2Fwindtre.it%2F&ssi=732593e6-cd63-4848-9dee-e5ad136a19fc&ssk=botmanager_support@radware.com&ssm=33643626391053112102427570756588&ssn=dd36626c9691e93faa4025e675658d47b7057b9bb2d9-c45f-428d-aa41a6&sso=9ac0b507-7433de00928b281a8f401ccbd013e8c2356629ff522f3944&ssp=88848187121790042531179001419777388&ssq=12039007542838461121875428857962253289766&ssr=ODcuMTYuMzUuMTg1&sst=curl/8.19.0&ssu=&ssv=&ssw=&ssx=eyJ1em14IjoiN2ZjMDAwMTk0MTYzZWUtOTI1Ni00OWRjLTg3ZDAtZGE3Y2JiYTQ2NzY1MS0xNzkwMDc1NDI4MzI1MC0wMDZiMjBkNjNjNmU2ZjU2MTMzMTAiLCJfX3V6bWYiOiI3ZjkwMDA3YjliYjJkOS1jNDVmLTQyOGQtYTUwNy03NDMzZGUwMDkyOGIxLTE3OTAwNzU0MjgzMjUwLTAwNTgzYWE5ZmM3ODIyODQxYTIxMCIsInJkIjoid2luZHRyZS5pdCJ9"
+    },
+    {
+      "domain": "wise.com",
+      "names": [
+        "wise",
+        "transferwise"
+      ],
+      "ok": true,
+      "status": 200,
+      "redirectUrl": ""
+    },
+    {
+      "domain": "www.atac.roma.it",
+      "names": [
+        "atac",
+        "atac roma"
+      ],
+      "ok": true,
+      "status": 302,
+      "redirectUrl": "https://validate.perfdrive.com/?ssa=ca044364-a064-4660-b89c-7b73adec7dea&ssb=63531289757&ssc=https%3A%2F%2Fwww.atac.roma.it%2F&ssi=042d9d0e-c2o3-4efc-93f8-e4d07f07dd76&ssk=support@shieldsquare.com&ssm=84605086320457630107560606974512&ssn=2d348a677d198d30020c5d6421a8d1fb6d12071e6f21-8038-4cd8-b8f0f0&sso=afb83bbf-5d81f0b3e34ddd865ff2d7a50402325226ff4ef2cc91abab&ssp=96929615381790052945179005489164623&ssq=53581207543560121312475435875018435221388&ssr=ODcuMTYuMzUuMTg1&sst=curl/8.19.0&ssu=&ssv=&ssw=&ssx=eyJfX3V6bWYiOiI3ZjkwMDAwNzFlNmYyMS04MDM4LTRjZDgtYmJiZi01ZDgxZjBiM2UzNGQxLTE3OTAwNzU0MzUxMzkwLTAwNWY5ZDc3Y2M5MjhjODRhYWQxMCIsInV6bXgiOiI3ZmMwMDA4YzA4MGUyNC1lZmRmLTRjOGMtYTNmYi1iMjU2ZDA1OWUzZmUxLTE3OTAwNzU0MzUxMzkwLTAwNmUxYmUwMWRhYjUwYWMzMzYxMCIsInJkIjoiYXRhYy5yb21hLml0In0="
+    },
+    {
+      "domain": "www.groupama.it",
+      "names": [
+        "groupama"
+      ],
+      "ok": true,
+      "status": 200,
+      "redirectUrl": ""
+    },
+    {
+      "domain": "www.postemobile.it",
+      "names": [
+        "postemobile",
+        "poste mobile"
+      ],
+      "ok": true,
+      "status": 200,
+      "redirectUrl": ""
+    },
+    {
+      "domain": "www.sielte.it",
+      "names": [
+        "sielte id",
+        "spid sielte"
+      ],
+      "ok": true,
+      "status": 200,
+      "redirectUrl": ""
+    },
+    {
+      "domain": "x.com",
+      "names": [
+        "x",
+        "twitter"
+      ],
+      "ok": true,
+      "status": 200,
+      "redirectUrl": ""
+    },
+    {
+      "domain": "xbox.com",
+      "names": [
+        "xbox"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.xbox.com/"
+    },
+    {
+      "domain": "yahoo.com",
+      "names": [
+        "yahoo"
+      ],
+      "ok": true,
+      "status": 404,
+      "redirectUrl": ""
+    },
+    {
+      "domain": "youtube.com",
+      "names": [
+        "youtube"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.youtube.com/"
+    },
+    {
+      "domain": "zalando.it",
+      "names": [
+        "zalando"
+      ],
+      "ok": true,
+      "status": 302,
+      "redirectUrl": "https://www.zalando.it/"
+    },
+    {
+      "domain": "zara.com",
+      "names": [
+        "zara"
+      ],
+      "ok": true,
+      "status": 403,
+      "redirectUrl": ""
+    },
+    {
+      "domain": "zoom.us",
+      "names": [
+        "zoom"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.zoom.com/"
+    },
+    {
+      "domain": "zurich.it",
+      "names": [
+        "zurich"
+      ],
+      "ok": true,
+      "status": 301,
+      "redirectUrl": "https://www.zurich.it/"
+    }
+  ]
+}
