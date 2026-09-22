@@ -1,0 +1,23 @@
+{
+  "name": "chiavi-pwa",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest run",
+    "dev": "vite",
+    "build": "vite build && node tools/stamp-sw.mjs",
+    "preview": "vite preview",
+    "gen-domains": "node tools/gen-domains.mjs",
+    "verify-domains": "node tools/verify-domains.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "private": "true",
+  "devDependencies": {
+    "vite": "^8.3.0",
+    "vitest": "^4.1.11"
+  }
+}

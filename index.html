@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chiavi</title>
+<meta name="description" content="Archivio personale di password, cifrato e offline.">
+<!--
+  CSP (punto 6): niente 'unsafe-inline' (stili in styles.css, non inline), niente CDN a runtime.
+  img-src include SOLO le sorgenti favicon verificate in VERIFICHE.md; connect-src include SOLO
+  il servizio nome->dominio verificato (Clearbit Autocomplete). frame-ancestors non è valido in
+  un meta tag (richiede l'header HTTP): GitHub Pages non permette di impostare header custom,
+  quindi non è applicabile qui — documentato anche in DECISIONI.md.
+-->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob: https://www.google.com https://*.gstatic.com https://icons.duckduckgo.com; connect-src 'self' https://autocomplete.clearbit.com; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" type="image/png" href="./icons/favicon-32.png">
+<link rel="apple-touch-icon" href="./icons/icon-192.png">
+<meta name="theme-color" content="#1F5F7A">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Chiavi">
+<link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+<div id="app"></div>
+<div id="layer"></div>
+<div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+<input id="file-backup" type="file" accept=".json,application/json" class="hidden">
+<input id="file-logo" type="file" accept="image/*" class="hidden">
+<input id="file-excel" type="file" accept=".xlsx,.xls,.csv,text/csv" class="hidden">
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
