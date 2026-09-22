@@ -1,8 +1,9 @@
 {
   "name": "chiavi-pwa",
   "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Archivio personale di password, cifrato e offline (PWA).",
+  "private": true,
+  "type": "module",
   "scripts": {
     "test": "vitest run",
     "dev": "vite",
@@ -11,11 +12,7 @@
     "gen-domains": "node tools/gen-domains.mjs",
     "verify-domains": "node tools/verify-domains.mjs"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "module",
-  "private": "true",
+  "license": "UNLICENSED",
   "devDependencies": {
     "vite": "^8.3.0",
     "vitest": "^4.1.11"
