@@ -22,10 +22,43 @@ export function normalizeHeader(s) {
     .trim();
 }
 
+// Distanza di Levenshtein (numero minimo di modifiche carattere per carattere per trasformare
+// una parola nell'altra) — usata solo come ripiego per tollerare piccoli errori di battitura
+// nelle intestazioni di un file reale (es. "accaunt", "usurname", "pasword": capitato davvero
+// durante l'uso, vedi il commit che ha introdotto questa parte).
+function levenshtein(a, b) {
+  if (a === b) return 0;
+  const m = a.length, n = b.length;
+  if (!m) return n;
+  if (!n) return m;
+  const prev = new Array(n + 1);
+  for (let j = 0; j <= n; j++) prev[j] = j;
+  for (let i = 1; i <= m; i++) {
+    let prevDiag = prev[0];
+    prev[0] = i;
+    for (let j = 1; j <= n; j++) {
+      const tmp = prev[j];
+      prev[j] = a[i - 1] === b[j - 1]
+        ? prevDiag
+        : 1 + Math.min(prevDiag, prev[j], prev[j - 1]);
+      prevDiag = tmp;
+    }
+  }
+  return prev[n];
+}
+// Tolleranza in base alla lunghezza della parola: più la parola è lunga, più errori si accettano,
+// ma le parole corte (es. "id", "pin") restano a confronto esatto per non generare falsi positivi.
+function maxTypoDistance(len) {
+  if (len <= 4) return 0;
+  if (len <= 7) return 1;
+  return 2;
+}
+
 // Confronto per parole intere (non per sottostringa: un'intestazione "a" non deve "matchare"
 // solo perché "a" compare dentro "password"). Un sinonimo multi-parola come "sito web" vince su
 // uno mono-parola come "sito" quando l'intestazione li contiene entrambi, scegliendo il match più
-// specifico (più parole in comune).
+// specifico (più parole in comune). Se nessun sinonimo corrisponde esattamente, si ritenta
+// tollerando piccoli errori di battitura (vedi levenshtein sopra).
 export function matchField(headerText) {
   const h = normalizeHeader(headerText);
   if (!h) return null;
@@ -39,6 +72,23 @@ export function matchField(headerText) {
       if (!allPresent) continue;
       const score = sWords.length;
       if (score > bestScore) { bestScore = score; best = field; }
+    }
+  }
+  if (best) return best;
+
+  let bestDist = Infinity;
+  for (const hw of hWords) {
+    for (const field of FIELD_ORDER) {
+      for (const syn of SYNONYMS[field]) {
+        const sWords = normalizeHeader(syn).split(" ").filter(Boolean);
+        if (sWords.length !== 1) continue; // il ripiego confronta solo sinonimi di una parola
+        const sw = sWords[0];
+        const dist = levenshtein(hw, sw);
+        if (dist > 0 && dist <= maxTypoDistance(sw.length) && dist < bestDist) {
+          bestDist = dist;
+          best = field;
+        }
+      }
     }
   }
   return best;

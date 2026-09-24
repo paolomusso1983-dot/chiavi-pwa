@@ -22,6 +22,17 @@ describe("riconoscimento intestazioni (sinonimi IT/EN, accenti, maiuscole)", () 
   it("colonne non riconosciute restano null (diventano campo extra)", () => {
     expect(matchField("Colore preferito")).toBeNull();
   });
+  it("tollera piccoli errori di battitura in un'intestazione altrimenti riconoscibile", () => {
+    // Caso reale riscontrato da un utente: "accaunt", "usurname", "pasword".
+    expect(matchField("accaunt")).toBe("name");
+    expect(matchField("usurname")).toBe("user");
+    expect(matchField("pasword")).toBe("pass");
+  });
+  it("non corregge parole troppo diverse o troppo corte (evita falsi positivi)", () => {
+    expect(matchField("automobile")).toBeNull();
+    expect(matchField("ID")).toBe("user"); // "id" è un sinonimo esatto di utente, non un typo
+    expect(matchField("dp")).toBeNull(); // troppo corto e troppo diverso da qualunque sinonimo
+  });
   it("intestazioni con codice/pin/segreto sono marcate come campo da nascondere", () => {
     expect(isSecretHeader("Codice cliente")).toBe(true);
     expect(isSecretHeader("Domanda di sicurezza")).toBe(true);
@@ -116,6 +127,14 @@ describe("mappatura colonne ed estrazione righe", () => {
     const { items } = cellsToRows(aoa, mapping, 0, {});
     attachExtraFields(items, header);
     expect(items[0].fields).toEqual([{ k: "Colore", v: "blu scuro", secret: false }]);
+  });
+});
+
+describe("caso reale: intestazioni con errori di battitura (accaunt/usurname/pasword/pin)", () => {
+  it("viene comunque rilevata la riga di intestazione e mappate le colonne giuste", () => {
+    const header = ["accaunt", "usurname", "pasword", "pin"];
+    expect(detectHeaderRowIndex([header])).toBe(0);
+    expect(buildMapping(header)).toEqual(["name", "user", "pass", "pin"]);
   });
 });
 
