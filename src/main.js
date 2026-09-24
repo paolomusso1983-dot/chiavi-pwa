@@ -7,6 +7,7 @@ import { IC } from "./icons.js";
 import { esc, norm, logoHtml, wireLogos, host, href, byName, initials, hueOf } from "./presentation.js";
 import { resolveDomain, resolveAndProbe, runLogoQueue, normalizeDomainInput } from "./logos.js";
 import { loadXlsx } from "./vendor-loader.js";
+import * as biometric from "./webauthn-unlock.js";
 import {
   detectHeaderRowIndex, buildMapping, inferMappingWithoutHeader, cellsToRows,
   attachExtraFields, mergeImportedItems, maskPassword, readWorkbookFile,
@@ -41,7 +42,7 @@ async function copyText(text, label) {
 
 const DEFAULT_META = () => ({ lockMin: 3, lastBackup: 0, dirty: false, autoLogo: true, autoLogoConsent: false, domainMap: {} });
 
-const S = { screen: "boot", key: null, salt: null, iter: ITER, data: null, q: "", sheet: null, fails: 0, waitUntil: 0, pendingBlob: null, reveal: {}, logoQueueRunning: false };
+const S = { screen: "boot", key: null, salt: null, iter: ITER, data: null, q: "", sheet: null, fails: 0, waitUntil: 0, pendingBlob: null, reveal: {}, logoQueueRunning: false, biometricRecord: null };
 
 async function persist(changed = true) {
   if (changed) S.data.meta.dirty = true;
@@ -61,7 +62,11 @@ document.addEventListener("visibilitychange", () => {
 function lock() {
   S.key = null; S.salt = null; S.data = null; S.sheet = null; S.q = ""; S.reveal = {};
   clearTimeout(idleT); closeSheet();
-  store.loadBlob().then(b => { S.screen = b ? "unlock" : "setup"; render(); });
+  Promise.all([store.loadBlob(), store.loadBiometric()]).then(([b, bio]) => {
+    S.biometricRecord = bio;
+    S.screen = b ? "unlock" : "setup";
+    render();
+  });
 }
 
 /* ---------- ricerca ---------- */
@@ -99,6 +104,7 @@ function render() {
     app.innerHTML = `<div class="gate"><div class="gate-box">
       <h1 class="brand">Chiavi</h1>
       <p>Archivio bloccato.</p>
+      ${S.biometricRecord ? `<button class="btn btn-main u-mb14" id="bio">Sblocca con impronta/volto</button>` : ""}
       <label class="f"><span>Master password</span><input id="pw" class="in" type="password" autocomplete="current-password"></label>
       <div class="err" id="err"></div>
       <button class="btn btn-main" id="go">Sblocca</button>
@@ -106,6 +112,7 @@ function render() {
     </div></div>`;
     $("#go").onclick = unlock; $("#pw").onkeydown = e => { if (e.key === "Enter") unlock(); };
     $("#imp").onclick = () => $("#file-backup").click();
+    if ($("#bio")) $("#bio").onclick = unlockWithBiometric;
     $("#pw").focus(); return;
   }
   if (S.screen === "home") {
@@ -167,6 +174,14 @@ async function createVault() {
   S.data = { items: [], meta: DEFAULT_META() };
   await persist(false); S.screen = "home"; bumpIdle(); render();
 }
+// Nucleo comune tra sblocco con password e con impronta/volto: apre il blob con la password
+// ottenuta (in chiaro, per il tempo minimo necessario) e passa alla home.
+async function performUnlock(pw) {
+  const r = await openBlob(S._unlockBlob, pw);
+  Object.assign(S, { key: r.key, salt: r.salt, iter: r.iter, data: r.data, fails: 0, screen: "home" });
+  S.data.meta = Object.assign(DEFAULT_META(), S.data.meta || {});
+  bumpIdle(); render();
+}
 async function unlock() {
   const err = $("#err"), btn = $("#go"), pw = $("#pw").value;
   const wait = S.waitUntil - Date.now();
@@ -174,16 +189,27 @@ async function unlock() {
   if (!pw) return;
   const blob = await store.loadBlob();
   if (!validBlob(blob)) { err.textContent = "Archivio non leggibile in questo browser. Importa un backup."; return; }
+  S._unlockBlob = blob;
   btn.disabled = true; btn.textContent = "Sblocco…";
   try {
-    const r = await openBlob(blob, pw);
-    Object.assign(S, { key: r.key, salt: r.salt, iter: r.iter, data: r.data, fails: 0, screen: "home" });
-    S.data.meta = Object.assign(DEFAULT_META(), S.data.meta || {});
-    bumpIdle(); render();
+    await performUnlock(pw);
   } catch {
     S.fails++; if (S.fails >= 3) S.waitUntil = Date.now() + Math.min(2 ** (S.fails - 2), 60) * 1000;
     btn.disabled = false; btn.textContent = "Sblocca";
     err.textContent = "Password errata."; $("#pw").select();
+  }
+}
+async function unlockWithBiometric() {
+  const btn = $("#bio"); if (btn) { btn.disabled = true; btn.textContent = "Verifica…"; }
+  try {
+    const blob = await store.loadBlob();
+    if (!validBlob(blob)) throw new Error("Archivio non leggibile in questo browser. Importa un backup.");
+    S._unlockBlob = blob;
+    const pw = await biometric.unlock(S.biometricRecord);
+    await performUnlock(pw);
+  } catch (e) {
+    toast((e && e.message) || "Sblocco con impronta/volto non riuscito.", true);
+    if (btn) { btn.disabled = false; btn.textContent = "Sblocca con impronta/volto"; }
   }
 }
 
@@ -207,6 +233,7 @@ function drawSheet() {
   if (sh.type === "logoConsent") return drawLogoConsent(sh);
   if (sh.type === "excelPreview") return drawExcelPreview(sh);
   if (sh.type === "excelDone") return drawExcelDone(sh);
+  if (sh.type === "biometricSetup") return drawBiometricSetup();
 }
 
 function fieldRow(label, value, key, secret) {
@@ -413,6 +440,9 @@ function drawSettings() {
         <button class="switch" id="autologo" role="switch" aria-pressed="${m.autoLogo !== false}"></button></div>
       <p class="u-p10">Voci senza logo: ${missing}.</p>
       <div class="sh-actions"><button class="btn" id="findlogos" ${missing === 0 || m.autoLogo === false ? "disabled" : ""}>${S.logoQueueRunning ? "Ricerca in corso…" : "Cerca loghi mancanti"}</button></div></div>
+    <div class="sect"><h3>Sblocco con impronta/volto</h3>
+      <p id="bio-status" class="u-muted-sm">Verifica disponibilità su questo dispositivo…</p>
+      <div class="sh-actions"><button class="btn ${S.biometricRecord ? "btn-danger" : "btn-main"}" id="biotoggle">${S.biometricRecord ? "Disattiva" : "Attiva"}</button></div></div>
     <div class="sect"><h3>Importa da Excel</h3>
       <p>Importa un file .xlsx, .xls o .csv con le password già registrate altrove.</p>
       <button class="btn" id="impx">Importa da Excel</button></div>
@@ -431,6 +461,15 @@ function drawSettings() {
   $("#lm").onchange = async e => { m.lockMin = +e.target.value; await persist(false); bumpIdle(); toast("Blocco automatico: " + m.lockMin + " min"); };
   $("#autologo").onclick = async () => { m.autoLogo = m.autoLogo === false; m.autoLogoConsent = true; await persist(false); drawSettings(); };
   $("#findlogos").onclick = () => { const missingItems = S.data.items.filter(it => !it.logo && !it.logoDomain); requestAutoLogoSearch(missingItems); drawSettings(); };
+  refreshBiometricStatus();
+  $("#biotoggle").onclick = () => {
+    if (S.biometricRecord) {
+      if (!confirm("Disattivare lo sblocco con impronta/volto? Potrai comunque sempre usare la master password.")) return;
+      store.clearBiometric().then(() => { S.biometricRecord = null; drawSettings(); toast("Sblocco con impronta/volto disattivato."); });
+    } else {
+      openSheet({ type: "biometricSetup" });
+    }
+  };
   $("#impx").onclick = () => $("#file-excel").click();
   $("#ex").onclick = exportBackup;
   $("#im").onclick = () => $("#file-backup").click();
@@ -448,7 +487,57 @@ async function changeMaster() {
   const btn = $("#cp"); btn.disabled = true; btn.textContent = "Verifica…";
   try { const b = await sealVault(S); await openBlob(b, c0); } catch { err.textContent = "La password attuale è errata."; btn.disabled = false; btn.textContent = "Cambia password"; return; }
   S.salt = crypto.getRandomValues(new Uint8Array(16)); S.iter = ITER; S.key = await deriveKey(c1, S.salt, S.iter);
-  S.data.meta.dirty = true; await persist(false); drawSettings(); toast("Master password cambiata. Esporta un nuovo backup.");
+  S.data.meta.dirty = true; await persist(false);
+  // Lo sblocco biometrico cifra la VECCHIA master password: dopo il cambio non serve più a
+  // niente (anzi sbloccherebbe con la password sbagliata), va rifatto da capo.
+  if (S.biometricRecord) {
+    await store.clearBiometric(); S.biometricRecord = null;
+    toast("Master password cambiata. Lo sblocco con impronta/volto è stato disattivato: riattivalo dalle Impostazioni. Esporta un nuovo backup.");
+  } else {
+    toast("Master password cambiata. Esporta un nuovo backup.");
+  }
+  drawSettings();
+}
+
+/* ---------- sblocco con impronta/volto ---------- */
+async function refreshBiometricStatus() {
+  const el = $("#bio-status");
+  if (!el) return;
+  if (!biometric.isPlatformAuthenticatorPossible()) { el.textContent = "Il tuo browser non supporta questa funzione."; return; }
+  const avail = await biometric.isPlatformAuthenticatorAvailable();
+  const stillThere = $("#bio-status"); if (!stillThere) return; // impostazioni chiuse nel frattempo
+  stillThere.textContent = avail
+    ? (S.biometricRecord ? "Attivo su questo dispositivo." : "Disponibile su questo dispositivo: puoi attivarlo.")
+    : "Non risulta disponibile: nessuna impronta/volto configurato in questo browser/dispositivo.";
+}
+function drawBiometricSetup() {
+  sheetShell(`<div class="sh-head"><div class="grow"><h2>Attiva impronta/volto</h2></div></div>
+    <p>Inserisci la master password attuale: serve una sola volta, per collegarla in modo sicuro all'impronta/volto di questo dispositivo. Il telefono chiederà poi la verifica biometrica.</p>
+    <label class="f"><span>Master password attuale</span><input class="in" id="bp" type="password" autocomplete="current-password"></label>
+    <div class="err" id="berr"></div>
+    <div class="sh-actions"><span class="spacer"></span><button class="btn" id="cl">Annulla</button><button class="btn btn-main" id="go">Continua</button></div>`);
+  $("#bp").focus();
+  $("#cl").onclick = () => openSheet({ type: "settings" });
+  const run = async () => {
+    const pw = $("#bp").value, err = $("#berr"), btn = $("#go");
+    if (!pw) return;
+    btn.disabled = true; btn.textContent = "Verifica…";
+    try { const b = await sealVault(S); await openBlob(b, pw); } catch {
+      err.textContent = "Password errata."; btn.disabled = false; btn.textContent = "Continua"; return;
+    }
+    try {
+      const record = await biometric.enable(pw);
+      const ok = await store.saveBiometric(record);
+      if (!ok) throw new Error("Salvataggio non riuscito su questo dispositivo.");
+      S.biometricRecord = record;
+      openSheet({ type: "settings" });
+      toast("Sblocco con impronta/volto attivato.");
+    } catch (e) {
+      err.textContent = (e && e.message) || "Attivazione non riuscita.";
+      btn.disabled = false; btn.textContent = "Continua";
+    }
+  };
+  $("#go").onclick = run; $("#bp").onkeydown = e => { if (e.key === "Enter") run(); };
 }
 
 async function exportBackup() {
@@ -588,7 +677,8 @@ if ("serviceWorker" in navigator) {
   }
   store.requestPersistence();
   await store.migrateIfNeeded();
-  const blob = await store.loadBlob();
+  const [blob, bio] = await Promise.all([store.loadBlob(), store.loadBiometric()]);
+  S.biometricRecord = bio;
   S.screen = blob ? "unlock" : "setup";
   render();
 })();

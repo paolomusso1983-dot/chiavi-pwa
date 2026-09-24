@@ -4,6 +4,7 @@ const DB_NAME = "chiavi-db";
 const DB_VERSION = 1;
 const STORE = "vault";
 const RECORD_KEY = "blob";
+const BIOMETRIC_KEY = "biometric";
 const LOCALSTORAGE_KEY = "chiavi.vault.v1";
 
 function openDb() {
@@ -83,7 +84,22 @@ export async function storeBlob(blob) {
 
 export async function wipeStore() {
   try { await idbDelete(RECORD_KEY); } catch { /* ignore */ }
+  try { await idbDelete(BIOMETRIC_KEY); } catch { /* ignore */ }
   wipeLegacy();
+}
+
+// Record dello sblocco biometrico (vedi webauthn-unlock.js): {credentialId, salt, iv, ct}, la
+// master password cifrata con un valore derivabile solo dall'autenticatore di questo dispositivo
+// dopo la verifica biometrica. Sta fuori dal blob cifrato apposta: serve PRIMA di poter aprire
+// il blob con la master password normale.
+export async function loadBiometric() {
+  try { return await idbGet(BIOMETRIC_KEY); } catch { return null; }
+}
+export async function saveBiometric(record) {
+  try { await idbSet(BIOMETRIC_KEY, record); return true; } catch { return false; }
+}
+export async function clearBiometric() {
+  try { await idbDelete(BIOMETRIC_KEY); } catch { /* ignore */ }
 }
 
 export async function requestPersistence() {

@@ -104,7 +104,25 @@ tutti corretti:
    esplicito solo quando davvero non c'è né cache né rete. Verificato spegnendo il server locale a
    app già installata: l'intera app (shell + dati IndexedDB + loghi già scaricati) resta
    utilizzabile offline, come richiesto dal punto 7.
-7. Non è stata scritta una suite Playwright separata (punto 8.6 di SPEC.md): la stessa verifica
+7bis. **Sblocco con impronta/volto** (richiesto dall'utente dopo la pubblicazione): usa
+   `WebAuthn` con l'estensione `prf` (`src/webauthn-unlock.js`). L'autenticatore della
+   piattaforma, dopo la verifica biometrica, restituisce un valore segreto derivato che non
+   viene mai salvato: si usa per cifrare (AES-256-GCM) la master password, e solo il risultato
+   cifrato finisce in IndexedDB, in un record separato dal blob dell'archivio (deve essere
+   leggibile PRIMA di poter aprire l'archivio con la password normale, quindi non può stare
+   dentro il payload cifrato con quella password). Compatibile con zero-knowledge: senza
+   quel dispositivo e quella impronta/volto già registrati, il valore non si ricostruisce.
+   Limiti reali, verificati e da verificare ancora: il supporto dell'estensione `prf` varia da
+   browser a browser e non è deducibile dal modello di telefono, va controllato con
+   `PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable()` (mostrato all'utente in
+   Impostazioni, non un'ipotesi) e provato davvero al momento dell'attivazione — se
+   l'autenticatore non supporta `prf`, l'attivazione fallisce con un messaggio chiaro invece di
+   salvare qualcosa di rotto. Il collaudo end-to-end del riconoscimento biometrico vero e proprio
+   non è stato possibile in questo ambiente di sviluppo (nessun sensore reale): il flusso è
+   stato verificato fino al punto in cui il sistema operativo prende il controllo per la
+   verifica, che va confermato dall'utente sul proprio telefono. Cambiare la master password
+   invalida il collegamento (cifra la password vecchia): va disattivato e riattivato.
+8. Non è stata scritta una suite Playwright separata (punto 8.6 di SPEC.md): la stessa verifica
    (viewport 390×844 e 1280×800, tema chiaro/scuro, flussi reali) è stata fatta con il browser
    integrato dell'ambiente di sviluppo, con gli stessi esiti attesi da un test Playwright ma
    eseguita a mano invece che come script salvato nel repository. Le prove puramente logiche
